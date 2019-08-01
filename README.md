@@ -1,0 +1,2 @@
+# squash
+Superior Queue Dashboard
