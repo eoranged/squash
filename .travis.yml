@@ -12,12 +12,17 @@ install:
 script:
   - pytest
 
+before_deploy:
+  - python setup.py sdist
+
 deploy:
   - provider: releases
     api_key:
       secure: "LNiNRyMec/Yb8a3L0CUlecQ2KT9EVrsaVj+xyYGffKc4RERKuFVZwGG+/hc87MyObKFBKhfijtl1qa62b08cNya81MUVv4cZloVSYrjg9xo7uaQXGfDTfCOyhWATPtuMqLZJyDHg1lyMpLiVBCaBSho6nuPD8UC/1NhuRtKTClen6BgQI1Sq41c1Cev2kNvDHppeGvh6+i0kpA+4EkHw0In50TBuZEt/S934q+OPeopdWK72p9CF2h7F8ZJAkw2lAWGYjaqEYhUzpeuGij/NFseXcy4S2vAbI+2tar/Xyp+xDrZo4AqnmNqeyapKhLAWiKZzk0bTominJHzwzYivqJogw91pcosjixR2G4Z5JFiddOSUriDTZKLNX1eq+1HGR+qpY/3u5JGQ3+GNkRlfja8VA4WbRZsjcvhcfXFdGh2hd/pa6nDl6pZ2M8oVfCYBzXGCMvOhiULKjMzzfdQXX+520ELZ75rkOLWasSt9rwFcCDnf5Rm6R4pT6AqjEc1m5yiQBNcB9d7lakOMjqu6/1gbOa1QVZPaS9ct1XHq7yizS66+4NEvEKgyPuLSjdN6PFjwobOwKf3cek805srgrwE3B4zM/PKgEidAQe8KQclAPjUJQsJW9QaCe6HVfGpNZeKYxBxek8Tu3OtaWbNWkYrkbZR/ZrSDGaKIqJaJcBg="
     file_glob: true
     file: dist/python-squash-*.tar.gz
+    skip_existing: true
+    skip_cleanup: true
     on:
       repo: eoranged/squash
       tags: true
