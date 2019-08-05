@@ -13,8 +13,15 @@ def test_cli(loop, app, sanic_client):
     return loop.run_until_complete(sanic_client(app))
 
 
-async def test_index(test_cli):
+async def test_api_hello(test_cli):
     resp = await test_cli.get('/api/v1/hello')
     assert resp.status == 200
     json_data = await resp.json()
     assert json_data == {'hello': 'world'}
+
+
+async def test_index(test_cli):
+    resp = await test_cli.get('/')
+    assert resp.status == 200
+    data = await resp.text()
+    assert '<title>squash</title>' in data

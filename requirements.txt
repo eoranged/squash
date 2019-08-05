@@ -1,5 +1,6 @@
 # project dependencies
 sanic==19.6.2
+jinja2
 
 # dev dependencies
 pytest
