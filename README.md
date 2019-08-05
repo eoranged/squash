@@ -1,3 +1,5 @@
+![Build Status](https://api.travis-ci.com/eoranged/squash.svg?branch=master)
+
 # Name
 
 SQUASH is acronym for Superior QUeue dASHboard.
