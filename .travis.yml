@@ -1,15 +1,31 @@
 dist: bionic
 language: python
 python:
-  - "3.6"
-  - "3.7"
+  - '3.6'
+  - '3.7'
 services:
   - redis-server
 matrix:
   - fast_finish: true
-# command to install dependencies
 install:
   - pip install -r requirements.txt
-# command to run tests
 script:
-- pytest
+  - pytest
+
+deploy:
+  - provider: releases
+    api_key:
+      secure: OQckdZyU7htzaBlEUMfhI+p5qrpUwMqlqVOYUcexTCST9Ll/RaoUyNTgAqStvvnBPXQvT8GD/JQUgEN+SGJXi6tChLmZympiRcJOFzXhLzLiTwEvu6yJNV08zIe9QRpmWIyxi7YyVDCbtdbFxOev/cc8amZdy0nPA8yGG+T4y9WrDyjMMKTv71MIdAPD4fgZT1s63hV4qcnm/WvA/KVRr1vLrkiPEvISUWeYXtt8BPwWIu1PqYLahK2UEu4oPNgW6d6BrOiqpOhyVq/n7uy0k/qdfZqcg2BItk00hGB4yNpiOFMbqW40AHOvezgGVStFvCILfH+I3jh69CwCrep9z0tikRaG+27VrkySwp49rI6Ss9fpokpNhOw6K2BUkrmCLQPfIzQZk7OXfRiJY+dqYckW2sCOBRLOjlTrOkftTPg9/g05zYqkIF1D+arkvWD7rH83arFuFuW457w4wHYYQG4TxJ4dcqlGBMa8r+nbcPq15b3st2l+L1kPEq5rhoLdxQM9kghFCfqIJqETnb8JhUAcwhr9zWJ+URsZnfo5iTEd2mLp/eE9Fo0QIC0cC3mM7MhJGwayGRuX0IB0D5Ji781ar8trcy/E1XHn9rf1uZcX02OcrURZZO8mRTmx5yYYoF9qZ/c4cmW/0e5CJw4c1PmEpFyJ2kJLz+QrjI/ekXU=
+    file: dist/python-squash-*.tar.gz
+    on:
+      repo: eoranged/squash
+      tags: true
+  - provider: pypi
+    user: eoranged
+    password:
+      secure: "jbM/UF55yAq8MUK/NMF22QZZMPebWVKJxceZyZlwnGU6u1fEb07np7QAyJXO29+NLdUusQwRawc33iktQ0AXXZiDwtoQcRA3FZ211TDny36pkBkjUuYSoZ3xjsxbzVXdq6AHVNuyZZAMRpQpHIWfStVq9WmhEFSS1PdIGD2j9LBCVKuA4ZdRRGRIQIma3rYBVmT3Dc3vcIOkoG/ani+XB3/MvZ6bwqhWqxHz2bZjjyjxNqxy0NxsT/LzMGVrGhKY6cuFVvk4bLXghPBw65Gi/L7QeHaXTx/ORrzrVC2RvvGE2EqDglZuEcOtLSPjjMZ5CoTjoa0l6MwOrq7NrJJXisoXASG9Ox0pl+LzWei258WuQmhUiwgeZ1PnXfYUAz1tMgEQTvsLn1o+56ynK364xguuu9R4aFDcCA5+gIzQ8DmcNS+X/yAfXoZRzMFhf7tWfyQRZPxsvaeE11UjrB618Eoird1LotRw3LJveXf0HWD/dMM8cO5ILvFefSaAFEdn1ult254I3Oz86BeeD9EuUpdMmFTRo4fAXjFiPvJrMfWRFh36B3CcDq3pKDKcyuMriS71YVQl4cCnhA38jbfWWQ9Whye7c65Nf1ZPhzAqLzcH4m6I01SE6kH9gTSeUMXi4FpItKiKTfaEYA0sLr/NPJ24tMARSQyWFxl2EOrpbeI="
+    skip_existing: true
+    skip_cleanup: true
+    on:
+      repo: eoranged/squash
+      tags: true
