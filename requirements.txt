@@ -1,1 +1,6 @@
+# project dependencies
+sanic==19.6.2
+
+# dev dependencies
 pytest
+pytest-sanic
