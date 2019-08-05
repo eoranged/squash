@@ -16,6 +16,7 @@ deploy:
   - provider: releases
     api_key:
       secure: OQckdZyU7htzaBlEUMfhI+p5qrpUwMqlqVOYUcexTCST9Ll/RaoUyNTgAqStvvnBPXQvT8GD/JQUgEN+SGJXi6tChLmZympiRcJOFzXhLzLiTwEvu6yJNV08zIe9QRpmWIyxi7YyVDCbtdbFxOev/cc8amZdy0nPA8yGG+T4y9WrDyjMMKTv71MIdAPD4fgZT1s63hV4qcnm/WvA/KVRr1vLrkiPEvISUWeYXtt8BPwWIu1PqYLahK2UEu4oPNgW6d6BrOiqpOhyVq/n7uy0k/qdfZqcg2BItk00hGB4yNpiOFMbqW40AHOvezgGVStFvCILfH+I3jh69CwCrep9z0tikRaG+27VrkySwp49rI6Ss9fpokpNhOw6K2BUkrmCLQPfIzQZk7OXfRiJY+dqYckW2sCOBRLOjlTrOkftTPg9/g05zYqkIF1D+arkvWD7rH83arFuFuW457w4wHYYQG4TxJ4dcqlGBMa8r+nbcPq15b3st2l+L1kPEq5rhoLdxQM9kghFCfqIJqETnb8JhUAcwhr9zWJ+URsZnfo5iTEd2mLp/eE9Fo0QIC0cC3mM7MhJGwayGRuX0IB0D5Ji781ar8trcy/E1XHn9rf1uZcX02OcrURZZO8mRTmx5yYYoF9qZ/c4cmW/0e5CJw4c1PmEpFyJ2kJLz+QrjI/ekXU=
+    file_glob: true
     file: dist/python-squash-*.tar.gz
     on:
       repo: eoranged/squash
