@@ -6,4 +6,7 @@ ADD . /app
 RUN pip3 install -r /app/requirements.txt
 RUN python3 setup.py install
 
-CMD ["python3" "-m ""squash"]
+ENV SQUASH_PORT 8899
+EXPOSE $SQUASH_PORT
+
+CMD ["python3", "-m", "squash"]
