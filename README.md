@@ -11,6 +11,4 @@ These builds are currently intended only for developers who work on the project.
 
 # Useful links
 
-* [Docker hub](https://hub.docker.com/r/eoranged/squash)
-* [PyPI](https://pypi.org/project/python-squash/)
 * [Documentation](https://squash.readthedocs.io/en/latest/)
