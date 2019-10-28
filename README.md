@@ -1,10 +1,6 @@
+# This repo is currently does not have any meaningful code and Is used as a playground for experiments
+
 ![Build Status](https://api.travis-ci.com/eoranged/squash.svg?branch=master)
-
-# Name
-
-SQUASH is acronym for Superior QUeue dASHboard.
-
-This is standalone application which is meant to be modern replacement for [RQ Dashboard](https://github.com/eoranged/rq-dashboard/), aiming to solve multiple issues caused by design decisions made in original project.
 
 # Status
 
